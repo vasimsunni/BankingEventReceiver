@@ -2,6 +2,9 @@
 {
     public interface IServiceBusReceiver
     {
+        //Used to manually test the queue
+        Task AddMessageToQueue(EventMessage message);
+
         Task<EventMessage?> Peek();
 
         Task Abandon(EventMessage message);
